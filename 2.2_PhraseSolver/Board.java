@@ -12,7 +12,17 @@ public class  Board
   private String phrase;
   private int currentLetterValue; 
 
+  public Board(){
+    solvedPhrase = "";
+    phrase = loadPhrase();
+    System.out.println("Phrase: " + phrase); //temp test code
+    setLetterValue();
+  }
+  
+
   /* your code here - constructor(s) */ 
+  
+
   
   /* your code here - accessor(s) */
   
@@ -81,6 +91,7 @@ public class  Board
     
     return tempPhrase;
   }  
+ 
 
   public boolean guessLetter(String guess)
   {
@@ -100,6 +111,9 @@ public class  Board
       }
     }
     solvedPhrase = newSolvedPhrase;
+
     return foundLetter;
   } 
+
+  
 } 
