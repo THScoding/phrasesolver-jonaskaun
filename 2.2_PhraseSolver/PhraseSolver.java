@@ -32,6 +32,44 @@ public class PhraseSolver
     int currentPlayer = 1;
     Scanner input = new Scanner(System.in);
     int incrementer = 1;
+
+    String guess = input.nextLine();
+    System.out.println(guess);
+  
+    String phrase = game.getPhrase();
+    System.out.println(phrase);
+
+
+    if (guess.length() == 1){
+        System.out.println("1 letter");
+        for (int t = 0;t<phrase.length();t+=1){
+          String a = phrase.substring(t,t+1);
+        
+          if (a.equals(guess)){
+            System.out.print(guess);
+          }
+          else if (a.equals(" ") ){
+            System.out.print(" ");
+          }
+          else{
+            System.out.print("_");
+          }
+        }
+        System.out.println("");
+          
+
+      }
+        
+      
+      else {
+        System.out.println("full phrase");
+        if (guess.equals(phrase)){
+          solved = true;
+          System.out.println("you did it");
+        }
+        else{
+          System.out.println("incorrect");
+        }
     
     
     
@@ -46,6 +84,7 @@ public class PhraseSolver
     
     while (solved != true) 
     {
+      incrementer++;
       if ((incrementer%2) == 0){
         currentPlayer = 2;
         
@@ -103,7 +142,7 @@ public class PhraseSolver
 
 
       }
-      incrementer++;
+      
       
       /* your code here - game logic */
       
