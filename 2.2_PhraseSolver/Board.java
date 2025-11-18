@@ -17,10 +17,17 @@ public class  Board
     phrase = loadPhrase();
     System.out.println("Phrase: " + phrase); //temp test code
     setLetterValue();
+
+    
   }
+  public String getPhrase(){
+    return phrase;
+  }
+
+
   
 
-  /* your code here - constructor(s) */ 
+  
   
 
   
