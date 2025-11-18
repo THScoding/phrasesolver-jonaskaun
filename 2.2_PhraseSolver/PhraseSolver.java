@@ -61,14 +61,14 @@ public class PhraseSolver
       String guess = input.nextLine();
       System.out.println(guess);
   
-      String sigma = game.getPhrase();
-      System.out.println(sigma);
+      String phrase = game.getPhrase();
+      System.out.println(phrase);
       
       
       if (guess.length() == 1){
         System.out.println("1 letter");
-        for (int t = 0;t<sigma.length();t+=1){
-          String a = sigma.substring(t,t+1);
+        for (int t = 0;t<phrase.length();t+=1){
+          String a = phrase.substring(t,t+1);
         
           if (a.equals(guess)){
             System.out.print(guess);
@@ -88,7 +88,7 @@ public class PhraseSolver
       
       else {
         System.out.println("full phrase");
-        if (guess.equals(sigma)){
+        if (guess.equals(phrase)){
           solved = true;
           System.out.println("you did it");
         }
