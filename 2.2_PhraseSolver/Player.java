@@ -22,10 +22,16 @@ public class Player
     String playerName = inputName;
     points = 0;
     System.out.println("WELCOME "+playerName+ " to this phrase solver game");
-
+    
+    
+    
 
   }
 
+
+  
+
+  
   
 
   

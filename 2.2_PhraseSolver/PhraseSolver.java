@@ -31,6 +31,7 @@ public class PhraseSolver
     boolean solved = false;
     int currentPlayer = 1;
     Scanner input = new Scanner(System.in);
+    int incrementer = 1;
     
     
     
@@ -45,7 +46,17 @@ public class PhraseSolver
     
     while (solved != true) 
     {
-      System.out.println("input your guess");
+      if ((incrementer%2) == 0){
+        currentPlayer = 2;
+        
+      }
+      else {
+        currentPlayer = 1;
+      }
+      
+      
+      System.out.println("Player "+currentPlayer+ ": input your guess");
+      
       
       String guess = input.nextLine();
       System.out.println(guess);
@@ -53,10 +64,28 @@ public class PhraseSolver
       String sigma = game.getPhrase();
       System.out.println(sigma);
       
+      
       if (guess.length() == 1){
         System.out.println("1 letter");
+        for (int t = 0;t<sigma.length();t+=1){
+          String a = sigma.substring(t,t+1);
         
+          if (a.equals(guess)){
+            System.out.print(guess);
+          }
+          else if (a.equals(" ") ){
+            System.out.print(" ");
+          }
+          else{
+            System.out.print("_");
+          }
+        }
+        System.out.println("");
+          
+
       }
+        
+      
       else {
         System.out.println("full phrase");
         if (guess.equals(sigma)){
@@ -68,7 +97,13 @@ public class PhraseSolver
         }
 
 
+        
+
+
+
+
       }
+      incrementer++;
       
       /* your code here - game logic */
       
