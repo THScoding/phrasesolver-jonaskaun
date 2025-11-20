@@ -38,6 +38,8 @@ public class PhraseSolver
   
     String phrase = game.getPhrase();
     System.out.println(phrase);
+    String phraseOne = "";
+
 
 
     if (guess.length() == 1){
@@ -46,30 +48,32 @@ public class PhraseSolver
           String a = phrase.substring(t,t+1);
         
           if (a.equals(guess)){
-            System.out.print(guess);
+            phraseOne += guess;
+            
           }
           else if (a.equals(" ") ){
-            System.out.print(" ");
+            phraseOne += " ";
           }
           else{
-            System.out.print("_");
+            phraseOne += "_";
           }
         }
+        System.out.println(phraseOne);
         System.out.println("");
           
 
       }
         
       
-      else {
-        System.out.println("full phrase");
-        if (guess.equals(phrase)){
-          solved = true;
-          System.out.println("you did it");
-        }
-        else{
-          System.out.println("incorrect");
-        }
+    else {
+      System.out.println("full phrase");
+      if (guess.equals(phrase)){
+        solved = true;
+        System.out.println("you did it");
+      }
+      else{
+        System.out.println("incorrect");
+      }
     
     
     
@@ -80,10 +84,22 @@ public class PhraseSolver
     
 
     
-    
-    
-    while (solved != true) 
-    {
+  
+      
+      
+     
+      
+      
+      
+
+
+        
+
+
+
+
+      
+    while(solved == false){
       incrementer++;
       if ((incrementer%2) == 0){
         currentPlayer = 2;
@@ -94,31 +110,34 @@ public class PhraseSolver
       }
       
       
+      
       System.out.println("Player "+currentPlayer+ ": input your guess");
       
       
-      String guess = input.nextLine();
-      System.out.println(guess);
+      String guess2 = input.nextLine();
+      System.out.println(guess2);
   
-      String phrase = game.getPhrase();
-      System.out.println(phrase);
-      
-      
-      if (guess.length() == 1){
-        System.out.println("1 letter");
-        for (int t = 0;t<phrase.length();t+=1){
-          String a = phrase.substring(t,t+1);
         
-          if (a.equals(guess)){
-            System.out.print(guess);
+      String phrase2 = "";
+      
+      
+      if (guess2.length() == 1){
+        System.out.println("1 letter");
+        for (int t = 0;t<phraseOne.length();t+=1){
+          String a = phraseOne.substring(t,t+1);
+        
+          if (a.equals(guess2)){
+            phrase2 += guess2;
+            
           }
           else if (a.equals(" ") ){
-            System.out.print(" ");
+            phrase2 += " ";
           }
           else{
-            System.out.print("_");
+            phrase2 += "_";
           }
         }
+        System.out.println(phrase2);
         System.out.println("");
           
 
@@ -127,7 +146,7 @@ public class PhraseSolver
       
       else {
         System.out.println("full phrase");
-        if (guess.equals(phrase)){
+        if (guess.equals(phraseOne)){
           solved = true;
           System.out.println("you did it");
         }
@@ -135,23 +154,21 @@ public class PhraseSolver
           System.out.println("incorrect");
         }
 
-
-        
-
-
-
-
       }
       
       
+    }
+    input.close();
       /* your code here - game logic */
       
       
       /* your code here - determine how game ends */
       
     } 
-    solved = true; 
-   
+
+   solved = true; 
   }
   
-} 
+  
+}
+  
